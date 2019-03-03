@@ -1,6 +1,6 @@
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');// каждый раз создает index.html в папке build
-// const CleanWebpackPlugin = require('clean-webpack-plugin'); //очищать папку build
+const CleanWebpackPlugin = require('clean-webpack-plugin'); //очищать папку dist
 const MiniCssExtractPlugin = require("mini-css-extract-plugin"); //Компилятор scss файлов
 
 
@@ -51,7 +51,7 @@ module.exports = {
       filename: 'app.css',
       chunkFilename: '[id].css'
     }),
-    // new CleanWebpackPlugin(['dist/*']),
+    new CleanWebpackPlugin(['dist/*']),
     new HtmlWebpackPlugin({
       template: './src/index.html'
     })
